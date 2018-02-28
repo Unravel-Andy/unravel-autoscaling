@@ -37,7 +37,7 @@ cluster name and resource group name can be retrieve using azure command:
 
 `$ azure hdinsight cluster list`
 
-![info](https://lh4.googleusercontent.com/GCRur5Zyna5jzUKDx95YRLK9p1GZmgH3I9bFXxGVQkpH56aio6_McJLCCgtjAMjMeTWEnH8iVsymB5-VZ64Z=w1697-h903-rw)
+![info](azure-autoscaling.png)
 
 ### Run auto scaling
 
