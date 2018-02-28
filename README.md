@@ -33,7 +33,7 @@ open azure.py and edit these variables:
 
 **cluster_name**  e.g. 'estspk2rh75'
 
-cluster name and resource group name can be retrieve using azure command:
+cluster name and resource group name can be retrieved using azure command:
 
 `$ azure hdinsight cluster list`
 
