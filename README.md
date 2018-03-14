@@ -7,13 +7,13 @@ Install ujson and requests using pip:
 
 `$ pip install requests`
 
-Install Azure CLI 1.0 (Azure CLI 2.0 does not support HDinsight cluster) [Click Link to see installlation insturction](https://docs.microsoft.com/en-us/azure/cli-install-nodejs)
+Install Azure CLI 1.0 (Azure CLI 2.0 does not support HDinsight cluster) [Click Link to see installlation instruction](https://docs.microsoft.com/en-us/azure/cli-install-nodejs)
 
 After install Azure CLI 1.0 Run the following command to login:
 
 `$ azure login`
 
-Once you login azure you sure able to see existing HDinsight clusters using:
+Once you login azure you should able to see existing HDinsight clusters using:
 
 `$ azure hdinsight cluster list`
 
