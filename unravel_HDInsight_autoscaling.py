@@ -1,6 +1,6 @@
 """
  Unravel Auto Scaling on HDInsight
- v0.2.0
+ v0.2.1
 """
 import json
 import logging
@@ -18,7 +18,7 @@ except Exception as e:
 #                                                           #
 #############################################################
 
-unravel_base_url = 'http://52.170.202.86:3000'
+unravel_base_url = 'http://localhost:3000'
 memory_threshold = 80              #%
 cpu_threshold = 60                 #%
 min_nodes = 1                      # Min workerNodes
@@ -69,13 +69,13 @@ def check_threshold(threshold_count, resources_usage):
     total_cores = resources_usage['total_cores']
     total_memory = resources_usage['total_memory']
     nodes_count = resources_usage['nodes_count']
-    if cpu_usage > (cpu_threshold + (cpu_threshold * threshold_tolerance)) or memory_usage > memory_threshold:
+    if cpu_usage > cpu_threshold or memory_usage > memory_threshold:
         if threshold_count < threshold_count_limit:
             return ('Up Scale threshold reach')
         # if threshold_count >= threshold_count_limit and (total_cores < max_cpu_allow or total_memory < max_memory_allow):
         if threshold_count >= threshold_count_limit and nodes_count < max_nodes:
             return ('Up Scaling')
-    elif cpu_usage < (cpu_threshold - (cpu_threshold * threshold_tolerance)) and memory_usage < memory_threshold:
+    elif cpu_usage < (cpu_threshold - (cpu_threshold * threshold_tolerance)) and memory_usage < (memory_threshold - (memory_threshold * threshold_tolerance)):
         # if threshold_count > -threshold_count_limit and (total_cores > min_cpu_allow or total_memory > min_memory_allow):
         if threshold_count > -threshold_count_limit and nodes_count > min_nodes:
             return ('Down Scale threshold reach')
