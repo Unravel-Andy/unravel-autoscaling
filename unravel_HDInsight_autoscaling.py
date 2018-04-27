@@ -270,7 +270,7 @@ def main():
         else:
             LOGGER.error('Login Fail')
 
-        sleep(60)
+        sleep(120)
 
 if __name__ == '__main__':
     LOGGER = logging.getLogger('hdinsight_autoscaling')
