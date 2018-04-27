@@ -18,9 +18,9 @@ except Exception as e:
 #                                                           #
 #############################################################
 
-unravel_base_url = 'http://localhost:3000'
+unravel_base_url = 'http://52.170.202.86:3000'
 memory_threshold = 80              #%
-cpu_threshold = 60                 #%
+cpu_threshold = 80                 #%
 min_nodes = 1                      # Min workerNodes
 max_nodes = 3                      # Max workernodes Allowed
 resource_group = 'UNRAVEL01'
