@@ -5,13 +5,17 @@ Install requests using pip:
 
 `$ pip install requests`
 
-Install Azure CLI 1.0 (Azure CLI 2.0 does not support HDinsight cluster) [Click Link to see installlation insturction](https://docs.microsoft.com/en-us/azure/cli-install-nodejs)
+Install Azure CLI 1.0 (Azure CLI 2.0 does not support HDinsight cluster) [Click Link to see installlation instruction](https://docs.microsoft.com/en-us/azure/cli-install-nodejs)
 
 After install Azure CLI 1.0 Run the following command to login:
 
 `$ azure login`
 
+<<<<<<< HEAD
 Once you login azure you should see existing HDinsight clusters using:
+=======
+Once you login azure you should able to see existing HDinsight clusters using:
+>>>>>>> 4bf3a6fa3ced45366def02a1bd7f118e4cee2656
 
 `$ azure hdinsight cluster list`
 
