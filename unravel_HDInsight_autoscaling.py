@@ -1,6 +1,6 @@
 """
  Unravel Auto Scaling on HDInsight
- v0.2.1
+ v0.2.2
 """
 import json
 import logging
