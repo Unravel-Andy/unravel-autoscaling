@@ -1,0 +1,76 @@
+2018-04-27 11:44:47,363 - hdinsight_autoscaling - DEBUG : {'total_cores': 7.0, 'nodes_count': 1, 'cpu_usage': 28.57142857142857, 'total_memory': 25600.0, 'memory_usage': 12.0}
+2018-04-27 11:44:47,364 - hdinsight_autoscaling - INFO : 
+decision: No Action Needed
+threshold_count: 0
+Workdernode: 1
+2018-04-27 11:50:25,539 - hdinsight_autoscaling - DEBUG : {'total_cores': 7.0, 'nodes_count': 1, 'cpu_usage': 28.57142857142857, 'total_memory': 25600.0, 'memory_usage': 12.0}
+2018-04-27 11:50:25,540 - hdinsight_autoscaling - INFO : 
+decision: No Action Needed
+threshold_count: 0
+Workdernode: 1
+2018-04-27 11:51:27,948 - hdinsight_autoscaling - DEBUG : {'total_cores': 7.0, 'nodes_count': 1, 'cpu_usage': 28.57142857142857, 'total_memory': 25600.0, 'memory_usage': 12.0}
+2018-04-27 11:51:27,948 - hdinsight_autoscaling - INFO : 
+decision: No Action Needed
+threshold_count: 0
+Workdernode: 1
+2018-04-27 11:52:30,289 - hdinsight_autoscaling - DEBUG : {'total_cores': 7.0, 'nodes_count': 1, 'cpu_usage': 28.57142857142857, 'total_memory': 25600.0, 'memory_usage': 12.0}
+2018-04-27 11:52:30,289 - hdinsight_autoscaling - INFO : 
+decision: No Action Needed
+threshold_count: 0
+Workdernode: 1
+2018-04-27 11:53:35,812 - hdinsight_autoscaling - DEBUG : {'total_cores': 7.0, 'nodes_count': 1, 'cpu_usage': 71.42857142857143, 'total_memory': 25600.0, 'memory_usage': 50.0}
+2018-04-27 11:53:35,844 - hdinsight_autoscaling - INFO : 
+decision: Up Scale threshold reach
+threshold_count: 0
+Workdernode: 1
+2018-04-27 11:53:35,845 - hdinsight_autoscaling - INFO : Threshold reach
+2018-04-27 11:55:03,864 - hdinsight_autoscaling - DEBUG : {'total_cores': 7.0, 'nodes_count': 1, 'cpu_usage': 71.42857142857143, 'total_memory': 25600.0, 'memory_usage': 50.0}
+2018-04-27 11:55:03,864 - hdinsight_autoscaling - INFO : 
+decision: Up Scale threshold reach
+threshold_count: 1
+Workdernode: 1
+2018-04-27 11:55:03,864 - hdinsight_autoscaling - INFO : Threshold reach
+2018-04-27 11:56:06,374 - hdinsight_autoscaling - DEBUG : {'total_cores': 7.0, 'nodes_count': 1, 'cpu_usage': 71.42857142857143, 'total_memory': 25600.0, 'memory_usage': 50.0}
+2018-04-27 11:56:06,374 - hdinsight_autoscaling - INFO : 
+decision: Up Scale threshold reach
+threshold_count: 2
+Workdernode: 1
+2018-04-27 11:56:06,374 - hdinsight_autoscaling - INFO : Threshold reach
+2018-04-27 11:57:08,853 - hdinsight_autoscaling - DEBUG : {'total_cores': 7.0, 'nodes_count': 1, 'cpu_usage': 100.0, 'total_memory': 25600.0, 'memory_usage': 80.0}
+2018-04-27 11:57:08,854 - hdinsight_autoscaling - INFO : 
+decision: Up Scale threshold reach
+threshold_count: 3
+Workdernode: 1
+2018-04-27 11:57:08,854 - hdinsight_autoscaling - INFO : Threshold reach
+2018-04-27 11:58:14,976 - hdinsight_autoscaling - DEBUG : {'total_cores': 7.0, 'nodes_count': 1, 'cpu_usage': 100.0, 'total_memory': 25600.0, 'memory_usage': 80.0}
+2018-04-27 11:58:14,976 - hdinsight_autoscaling - INFO : 
+decision: Up Scale threshold reach
+threshold_count: 4
+Workdernode: 1
+2018-04-27 11:58:14,976 - hdinsight_autoscaling - INFO : Threshold reach
+2018-04-27 11:59:17,558 - hdinsight_autoscaling - DEBUG : {'total_cores': 7.0, 'nodes_count': 1, 'cpu_usage': 100.0, 'total_memory': 25600.0, 'memory_usage': 80.0}
+2018-04-27 11:59:17,558 - hdinsight_autoscaling - INFO : 
+decision: Up Scaling
+threshold_count: 5
+Workdernode: 1
+2018-04-27 11:59:17,558 - hdinsight_autoscaling - INFO : More Resources Needed
+2018-04-27 11:59:18,661 - hdinsight_autoscaling - INFO : info:    Executing command [1mhdinsight cluster resize[22m
+
+2018-04-27 11:59:18,666 - hdinsight_autoscaling - INFO : info:    Resizing HDInsight Cluster
+
+2018-04-27 12:09:24,855 - hdinsight_autoscaling - INFO : data:    Operation Info 
+
+2018-04-27 12:09:24,876 - hdinsight_autoscaling - INFO : data:    ---------------
+
+2018-04-27 12:09:24,877 - hdinsight_autoscaling - INFO : data:    Operation state:  Succeeded
+
+2018-04-27 12:09:24,877 - hdinsight_autoscaling - INFO : data:    Operation ID:  c335ee4e-dc91-44fc-a721-7a6f01960f8e
+
+2018-04-27 12:09:25,241 - hdinsight_autoscaling - INFO : info:    [1mhdinsight cluster resize[22m command [1m[32mOK[39m[22m
+
+2018-04-27 12:09:25,250 - hdinsight_autoscaling - INFO : Resizing Success
+2018-04-27 12:10:32,990 - hdinsight_autoscaling - DEBUG : {'total_cores': 14.0, 'nodes_count': 2, 'cpu_usage': 57.14285714285714, 'total_memory': 51200.0, 'memory_usage': 60.0}
+2018-04-27 12:10:32,990 - hdinsight_autoscaling - INFO : 
+decision: No Action Needed
+threshold_count: 0
+Workdernode: 2

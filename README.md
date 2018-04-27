@@ -1,9 +1,7 @@
 # unravel-autoscaling
 This is a demo script to scale up or down cluster based on cluster cpu and memory usage
 ### Prerequisites
-Install ujson and requests using pip:
-
-`$ pip install ujson`
+Install requests using pip:
 
 `$ pip install requests`
 
@@ -13,25 +11,25 @@ After install Azure CLI 1.0 Run the following command to login:
 
 `$ azure login`
 
-Once you login azure you sure able to see existing HDinsight clusters using:
+Once you login azure you should see existing HDinsight clusters using:
 
 `$ azure hdinsight cluster list`
 
-open azure.py and edit these variables:
+open `unravel_HDInsight_autoscaling.py` and edit these variables:
 
 **unravel_base_url** e.g. 'http://localhost:3000'
 
-**memory_threshold** e.g. 80; scale up when memory_usage reach 80%
+**memory_threshold** e.g. 80; scale up/down when memory_usage higher/lower 80%
 
-**cpu_threshold**  e.g. 10; scale up when cpu_usage reach 10%             
+**cpu_threshold**  e.g. 10; scale up when cpu_usage higher/lower 10%             
 
-**min_nodes**      e.g. 4; initial number of worder nodes in the cluster
+**min_nodes**      e.g. 4; min worker nodes
 
-**max_nodes**      e.g. 10; max worker nodes user want to scale up to
+**max_nodes**      e.g. 10; max worker nodes can scale up to
 
 **resource_group** e.g. 'UNRAVEL01'
 
-**cluster_name**  e.g. 'estspk2rh75'
+**cluster_name**   e.g. 'estspk2rh75'
 
 cluster name and resource group name can be retrieved using azure command:
 
@@ -43,4 +41,4 @@ cluster name and resource group name can be retrieved using azure command:
 
 Run the script:
 
-`python azure.py`
+`python unravel_HDInsight_autoscaling.py`
