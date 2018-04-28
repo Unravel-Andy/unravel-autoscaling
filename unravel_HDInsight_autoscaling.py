@@ -63,7 +63,7 @@ def check_login():
 
 
 def check_threshold(threshold_count, resources_usage):
-    threshold_tolerance = 0.1
+    threshold_tolerance = 0.2
     cpu_usage = resources_usage['cpu_usage']
     memory_usage = resources_usage['memory_usage']
     total_cores = resources_usage['total_cores']
@@ -81,7 +81,7 @@ def check_threshold(threshold_count, resources_usage):
             return ('Down Scale threshold reach')
         if threshold_count <= -threshold_count_limit :
             return ('Down Scaling')
-
+    threshold_count = 0
     return ('No Action Needed')
 
 # Get Cluster Workdernode Count
@@ -136,8 +136,12 @@ def elastic_search():
         total_memory = search_result['avg_totalmb']['value']
         cores_allocated = search_result['avg_allocatedvc']['value']
         memory_allocated = search_result['avg_allocatedmb']['value']
-        cpu_percent_usage = cores_allocated / total_cores  * 100
-        memory_percent_usage = memory_allocated / total_memory  * 100
+        try:
+            cpu_percent_usage = cores_allocated / total_cores  * 100
+            memory_percent_usage = memory_allocated / total_memory  * 100
+        except:
+            cpu_percent_usage = 1.0
+            memory_percent_usage = 1.0
         nodes_count = get_workdernode()
 
     return({'cpu_usage' : cpu_percent_usage,
