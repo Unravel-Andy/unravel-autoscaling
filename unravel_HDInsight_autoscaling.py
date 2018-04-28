@@ -81,7 +81,6 @@ def check_threshold(threshold_count, resources_usage):
             return ('Down Scale threshold reach')
         if threshold_count <= -threshold_count_limit :
             return ('Down Scaling')
-    threshold_count = 0
     return ('No Action Needed')
 
 # Get Cluster Workdernode Count
@@ -270,6 +269,8 @@ def main():
                     LOGGER.error('Resizing Fail')
 
                 #Removing extra resources command goes here
+                threshold_count = 0
+            elif decision == 'No Action Needed':
                 threshold_count = 0
         else:
             LOGGER.error('Login Fail')
