@@ -85,12 +85,15 @@ def check_threshold(threshold_count, resources_usage):
 
 # Get Cluster Workdernode Count
 def get_workdernode():
-    cluster_info = subprocess.check_output(['azure', 'hdinsight', 'cluster', 'show', '-g', resource_group, '-c', cluster_name, '--json'])
-    cluster = json.loads(cluster_info)
-    if cluster['name'] == cluster_name:
-		if cluster['properties']['computeProfile']['roles'][1]['name'] == 'workernode':
-			workerNodes = cluster['properties']['computeProfile']['roles'][1]['targetInstanceCount']
-    return workerNodes
+    try:
+        cluster_info = subprocess.check_output(['azure', 'hdinsight', 'cluster', 'show', '-g', resource_group, '-c', cluster_name, '--json'])
+        cluster = json.loads(cluster_info)
+        if cluster['name'] == cluster_name:
+    		if cluster['properties']['computeProfile']['roles'][1]['name'] == 'workernode':
+    			workerNodes = cluster['properties']['computeProfile']['roles'][1]['targetInstanceCount']
+        return workerNodes
+    except:
+        return 0
 
 
 def elastic_search():
