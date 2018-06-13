@@ -1,6 +1,6 @@
 """
  Unravel Auto Scaling on HDInsight
- v0.2.3
+ v0.2.4
 """
 import json
 import logging
@@ -18,16 +18,17 @@ except Exception as e:
 #                                                           #
 #############################################################
 
-unravel_base_url = 'http://52.170.202.86:3000'
+unravel_base_url = 'http://localhost:3000'
 memory_threshold = 80              #%
 cpu_threshold = 80                 #%
 min_nodes = 1                      # Min workerNodes
 max_nodes = 3                      # Max workernodes Allowed
 resource_group = 'UNRAVEL01'
-cluster_name = 'autoscaling1'
+cluster_name = 'unravelsparkstreaming'
 
 #Unravel Log in credentials
-login_data = {'user':{'login':'admin','password':'unraveldata'}}
+unravel_user = 'admin'
+unravel_pass = 'unraveldata'
 
 #############################################################
 #                                                           #
@@ -35,6 +36,7 @@ login_data = {'user':{'login':'admin','password':'unraveldata'}}
 #                                                           #
 #############################################################
 try:
+    login_data = {'user': {'login': unravel_user, 'password': unravel_pass}}
     login_uri = unravel_base_url + '/users/sign_in'
     app_search_uri = unravel_base_url + '/api/v1/apps/search'
     total_cores_across_hosts = unravel_base_url + '/api/v1/clusters/resources/cpu/total'
@@ -79,7 +81,7 @@ def check_threshold(threshold_count, resources_usage):
         # if threshold_count > -threshold_count_limit and (total_cores > min_cpu_allow or total_memory > min_memory_allow):
         if threshold_count > -threshold_count_limit and nodes_count > min_nodes:
             return ('Down Scale threshold reach')
-        if threshold_count <= -threshold_count_limit :
+        if threshold_count <= -threshold_count_limit:
             return ('Down Scaling')
     return ('No Action Needed')
 
@@ -146,11 +148,11 @@ def elastic_search():
             memory_percent_usage = 1.0
         nodes_count = get_workdernode()
 
-    return({'cpu_usage' : cpu_percent_usage,
-            'memory_usage' : memory_percent_usage,
+    return({'cpu_usage': cpu_percent_usage,
+            'memory_usage': memory_percent_usage,
             'total_memory': total_memory,
             'total_cores': total_cores,
-            'nodes_count' : nodes_count
+            'nodes_count': nodes_count
            })
 
 # Retrieve Allocated resources
@@ -173,11 +175,11 @@ def get_resources():
         # Get the number of workerNodes in cluster
         nodes_count = get_workdernode()
 
-        return {'cpu_usage' : cpu_percent_usage,
-                'memory_usage' : memory_percent_usage,
+        return {'cpu_usage': cpu_percent_usage,
+                'memory_usage': memory_percent_usage,
                 'total_memory': total_memory,
                 'total_cores': total_cores,
-                'nodes_count' : nodes_count
+                'nodes_count': nodes_count
                }
     except Exception as e:
         LOGGER.error("Get Resource Usage from Unravel Failed")
@@ -188,9 +190,9 @@ def get_resources():
 # Retrieve Running Jobs
 def get_run():
     search_input = {
-                    "appStatus":["R"],
+                    "appStatus": ["R"],
                     "from":0,
-                    "appTypes":["mr","hive","spark","cascading","pig"]
+                    "appTypes": ["mr", "hive", "spark", "cascading", "pig"]
                    }
 
     try:
